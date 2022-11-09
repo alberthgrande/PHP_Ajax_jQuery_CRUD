@@ -4,18 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>PHP Ajax jQuery CRUD</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
 <body>
     <!--Start Modal Add User Information -->
-    <div class="modal fade" id="adduserinfomation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addUserInfomation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">User Information</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add User Information</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -51,12 +51,66 @@
         </div>
     </div>
     <!-- End Modal Add User Information -->
+
+    <!--Start Modal Update User Information -->
+    <div class="modal fade" id="updateUserInfomation" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Update User Information</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="updatefirstname">Firstname</label>
+                        <input type="text" class="form-control" id="updatefirstname" placeholder="Firstname: Juan">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updatemiddelname">Middlename</label>
+                        <input type="text" class="form-control" id="updatemiddelname"
+                            placeholder="Middelname: Dela Cruz">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updatelastname">Lastname</label>
+                        <input type="text" class="form-control" id="updatelastname" placeholder="Lastname: Dele Cruz">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateemail">Email</label>
+                        <input type="email" class="form-control" id="updateemail" placeholder="Email: your@email.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateaddress">Address</label>
+                        <input type="text" class="form-control" id="updateaddress"
+                            placeholder="Address: G/F Nisce Building, Quezon Avenue">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updatephone">Phone Number</label>
+                        <input type="text" class="form-control" id="updatephone" placeholder="Phone: 09123456789">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="saveUserInformation" onclick="updateUserInfo()"
+                        data-bs-dismiss="modal">Update</button>
+                    <input type="hidden" id="hiddenData">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal Update User Information -->
+
     <div class="container my-3">
         <h1 class="text-center">PHP Ajax jQuery CRUD</h1>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#adduserinfomation">
+        <!-- Button trigger modal add user information -->
+        <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#addUserInfomation">
             Add User Information
         </button>
+        <!-- Button trigger modal add user information -->
+
+        <div id="dataUserInformationTable"></div>
     </div>
 
 
@@ -92,7 +146,7 @@
     </script>
 
     <!-- jscript for crud -->
-    <script src="js/addUserInformation.js"></script>
+    <script src="js/userInformation.js" defer></script>
 </body>
 
 </html>
